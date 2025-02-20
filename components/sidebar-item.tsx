@@ -15,10 +15,12 @@ export function SidebarItem({ name, icon }: SidebarItemProps) {
   return (
     <li className="list-none">
       <div
-        className={`flex p-2 rounded hover:bg-gray-600 hover:text-white text-black cursor-pointer items-center ${
-          menuTab === name && "bg-gray-600 text-gray-100"
+        className={`flex p-2 rounded hover:bg-secondaryColor hover:text-white text-black cursor-pointer items-center mb-4 ${
+          menuTab === name && "bg-secondaryColor text-gray-100"
         }`}
-        onClick={() => setMenuTab(name)}
+        onClick={() => {
+          setMenuTab(name);
+        }}
       >
         {<span className={SIDEBAR_CLASSES.icon}>{icon}</span>}
         {<span className="font-sans mr-2">{name}</span>}

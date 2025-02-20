@@ -1,1 +1,1 @@
-export type MenuTab = "Home" | "About" | "Portfolio" | "Contact";
+export type MenuTab = "Home" | "About" | "Projects" | "Contact" | "Resume";

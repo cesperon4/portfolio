@@ -1,24 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope } from "react-icons/fa";
-
-const slideIn = {
-  hidden: { x: "100vh", opacity: 0 },
-  visible: {
-    x: "0",
-    opacity: 1,
-    transition: {
-      duration: 1,
-      ease: "easeInOut",
-    },
-  },
-  exit: {
-    x: "-100vh",
-    opacity: 0,
-    transition: { duration: 1, ease: "easeInOut" },
-  },
-};
+import { FaEnvelope, FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import { slideIn } from "@/utils/animations";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -55,7 +39,7 @@ export function ContactForm() {
       console.log("response: ", response);
 
       if (response.ok) {
-        setStatus("Email sent successfully!");
+        setStatus("Email sent successfully.");
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus("Failed to send email.");
@@ -68,14 +52,14 @@ export function ContactForm() {
 
   return (
     <motion.div
-      className="w-[40rem] mx-auto bg-white p-8 rounded-lg shadow-md"
+      className="w-[40rem] mx-auto bg-white p-8 rounded-lg shadow-md overflow-hidden"
       variants={slideIn}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
       <h2 className="text-2xl font-bold mb-6 text-gray-500 flex items-center">
-        <FaEnvelope className="mr-2 text-blue-400" /> Contact Me
+        <FaEnvelope className="mr-2 text-primaryColor" /> Contact Me
       </h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -136,7 +120,21 @@ export function ContactForm() {
           Send Message
         </button>
       </form>
-      {status && <p className="mt-4 text-center">{status}</p>}
+      {
+        <p className="mt-4 text-center">
+          {status === "Email sent successfully." ? (
+            <span className="flex items-center justify-center text-green-500">
+              <FaCheckCircle className="mr-2" /> {status}
+            </span>
+          ) : status === "Failed to send email." ? (
+            <span className="flex items-center justify-center text-red-500">
+              <FaTimesCircle className="mr-2" /> {status}
+            </span>
+          ) : (
+            status
+          )}
+        </p>
+      }
     </motion.div>
   );
 }

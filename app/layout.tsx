@@ -4,6 +4,8 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "../components/app-sidebar";
 import { DataProvider } from "../context/DataContext";
+import { ThemeProvider } from "../components/theme-provider";
+import { ModeToggle } from "../components/mode-toggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,14 +32,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <DataProvider>
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarTrigger />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <DataProvider>
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarTrigger />
+              <ModeToggle />
 
-            {children}
-          </SidebarProvider>
-        </DataProvider>
+              {children}
+            </SidebarProvider>
+          </DataProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
