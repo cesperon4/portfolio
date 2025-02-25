@@ -7,8 +7,6 @@ import {
 } from "@/components/ui/sidebar";
 import { SidebarItem } from "./sidebar-item";
 import { FaHome, FaUser, FaBriefcase, FaEnvelope } from "react-icons/fa";
-import { IoIosDocument } from "react-icons/io";
-
 import { Footer } from "./footer";
 
 export function AppSidebar() {
@@ -25,7 +23,6 @@ export function AppSidebar() {
           <SidebarItem icon={<FaUser />} name={"About"} />
           <SidebarItem icon={<FaBriefcase />} name={"Projects"} />
           <SidebarItem icon={<FaEnvelope />} name={"Contact"} />
-          <SidebarItem icon={<IoIosDocument />} name={"Resume"} />
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>

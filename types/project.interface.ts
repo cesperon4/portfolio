@@ -3,6 +3,9 @@ interface Tools {
   react: boolean;
   tailwind: boolean;
   typescript: boolean;
+  graphql: boolean;
+  apollo: boolean;
+  prisma: boolean;
 }
 export interface ProjectType {
   id: number;

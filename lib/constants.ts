@@ -3,6 +3,10 @@ export const SIDEBAR_CLASSES = {
   header: "font-sans font-semibold text-xl",
 };
 
+export const PROJECT_MODAL_CLASSES = {
+  h2: "text-secondaryColor font-bold",
+};
+
 export const PROJECTS = [
   {
     id: 1,
@@ -11,7 +15,15 @@ export const PROJECTS = [
     endDate: "ongoing",
     description:
       "This project was created using public arcgis data from Santa Rosa Ca.",
-    tools: { next: true, react: true, tailwind: true, typescript: true },
+    tools: {
+      next: true,
+      react: true,
+      tailwind: true,
+      typescript: true,
+      graphql: false,
+      apollo: false,
+      prisma: false,
+    },
     link: "https://sr-portal-gamma.vercel.app/",
     repo: "https://github.com/cesperon4/sr_portal",
     dataSource: "https://data-santarosa.opendata.arcgis.com/",
@@ -25,7 +37,15 @@ export const PROJECTS = [
     endDate: "ongoing",
     description:
       "This project was created using public arcgis data from Santa Rosa Ca.",
-    tools: { next: true, react: true, tailwind: true, typescript: true },
+    tools: {
+      next: true,
+      react: true,
+      tailwind: true,
+      typescript: true,
+      graphql: false,
+      apollo: false,
+      prisma: false,
+    },
     link: "https://portfolio-topaz-chi-49.vercel.app/",
     repo: "https://github.com/cesperon4/sr_portal",
     dataSource: "https://data-santarosa.opendata.arcgis.com/",
@@ -39,6 +59,15 @@ export const PROJECTS = [
     endDate: "9-12-23",
     description:
       "This project was created using public arcgis data from Santa Rosa Ca.",
+    tools: {
+      next: true,
+      react: true,
+      tailwind: true,
+      typescript: false,
+      graphql: true,
+      apollo: true,
+      prisma: true,
+    },
     link: "https://bawscaportal.azurewebsites.net/",
     imageSrc: "/bawsca1.png",
     images: [
@@ -56,7 +85,16 @@ export const PROJECTS = [
     endDate: "02-03-25",
     description:
       "This project was created using public arcgis data from Santa Rosa Ca.",
-
+    link: "https://acwdportal.azurewebsites.net/",
+    tools: {
+      next: true,
+      react: true,
+      tailwind: true,
+      typescript: false,
+      graphql: true,
+      apollo: true,
+      prisma: true,
+    },
     imageSrc: "/acwd1.png",
     images: [
       "/acwd1.png",

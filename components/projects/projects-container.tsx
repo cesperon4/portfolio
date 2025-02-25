@@ -21,7 +21,7 @@ export function ProjectsContainer() {
 
   return (
     <motion.div
-      className="grid grid-cols-2 gap-8 w-[120rem] text-black overflow-hidden p-8"
+      className="grid grid-cols-1 md:grid-cols-3 gap-8 w-[100rem] text-black overflow-hidden p-4"
       variants={slideIn}
       initial="hidden"
       animate="visible"
