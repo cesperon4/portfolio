@@ -59,11 +59,12 @@ const ShowcaseSection = () => {
             </div>
             <div className="text-content">
               <h2>
-                On-Demand Rides Made Simple with a Powerful, User-Friendly App
-                called Ryde
+                An interactive tool that transforms public police data from
+                Santa Rosa, CA into easy-to-digest maps, charts, and tables for
+                deeper community insight.
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app built with React Native, Expo, & TailwindCSS for a fast,
+                An app built with Next.js, TailwindCSS, & Graphql for a fast,
                 user-friendly experience.
               </p>
             </div>
@@ -82,7 +83,10 @@ const ShowcaseSection = () => {
                   alt="Library Management Platform"
                 />
               </div>
-              <h2>The Library Management Platform</h2>
+              <h2>
+                Water Conservation Management System for the Bay Area Water
+                Supply & Conservation Agency
+              </h2>
             </div>
 
             <div className="project" ref={project3Ref}>
@@ -94,7 +98,10 @@ const ShowcaseSection = () => {
               >
                 <img src="/images/acwd1.png" alt="YC Directory App" />
               </div>
-              <h2>YC Directory - A Startup Showcase App</h2>
+              <h2>
+                Customizable Water Savings Application Forms for the Alameda
+                County Water District.
+              </h2>
             </div>
           </div>
         </div>

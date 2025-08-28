@@ -6,26 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gltf": "gltfjsx public/models/gltf-temp/public_phone_booth.glb --types --quiet -o src/components/models"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.5.0",
     "@react-three/fiber": "^9.2.0",
-    "@react-three/gltfjsx": "^4.3.4",
     "@react-three/postprocessing": "^3.0.4",
+    "@types/nodemailer": "^7.0.1",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "next": "15.3.5",
+    "nodemailer": "^7.0.5",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
     "react-responsive": "^10.0.1",
     "sharp": "^0.34.3",
     "three": "^0.178.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@react-three/gltfjsx": "^4.3.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

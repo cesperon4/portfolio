@@ -49,8 +49,8 @@ const Hero = () => {
               <h1>that Deliver Results</h1>
             </div>
             <p className="text-white-50 md:text-xl relative z-10">
-              Hello, I'm Christian, a react engineer with 3+ years of
-              professional experience
+              Hello, I'm Christian, a passionate Full-Stack Engineer with 4
+              years of professional experience.
             </p>
             <Button
               className="md:w-80 md:h-16 w-60 h-12"

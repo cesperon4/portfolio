@@ -11,6 +11,7 @@ import FeatureCards from "@/sections/FeatureCards";
 import ExperienceSection from "@/sections/ExperienceSection";
 import Testimonials from "@/sections/Testimonials";
 import TechStack from "@/sections/TechStack";
+import Contact from "@/sections/Contact";
 
 const RotatingCube = () => {
   const meshRef = useRef();
@@ -41,6 +42,7 @@ export default function Home() {
       <FeatureCards />
       <ExperienceSection />
       <TechStack />
+      <Contact />
       {/* <Testimonials /> */}
     </>
   );
