@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { navLinks } from "../constants/index";
+import Socials from "./Socials";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,11 +37,14 @@ export function Navbar() {
           </ul>
         </nav>
 
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
-          </div>
-        </a>
+        <div className="flex items-center gap-5">
+          <Socials />
+          <a href="#contact" className="contact-btn group">
+            <div className="inner">
+              <span>Contact me</span>
+            </div>
+          </a>
+        </div>
       </div>
     </header>
   );

@@ -83,6 +83,10 @@ section {
     @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
   }
 
+  .project-modal-heading {
+    @apply text-gray-400 font-semibold text-lg;
+  }
+
   .hero-text {
     @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
     img {
@@ -317,6 +321,16 @@ section {
       img {
         @apply inline-block;
       }
+    }
+  }
+
+  .social-links {
+    .link {
+      @apply cursor-pointer flex items-center gap-2;
+    }
+
+    .underline {
+      @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full;
     }
   }
 }

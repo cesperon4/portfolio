@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/page.jsx",
-    "src/hooks/useModal.jsx"
+    "src/hooks/useModal.jsx",
+    "src/components/models/contact/Phone.jsx"
   ],
   "exclude": ["node_modules"]
 }

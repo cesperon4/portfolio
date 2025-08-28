@@ -7,5 +7,8 @@ export interface projectImage {
 
 export interface projectInterface {
   name: string;
+  description: string;
+  technologies: string[];
   images: projectImage[];
+  projectLink: string;
 }

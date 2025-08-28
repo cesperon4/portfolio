@@ -29,56 +29,56 @@ const navLinks = [
     name: "Skills",
     link: "#skills",
   },
-  {
-    name: "Testimonials",
-    link: "#testimonials",
-  },
+  // {
+  //   name: "Testimonials",
+  //   link: "#testimonials",
+  // },
 ];
 
 const logoIconsList = [
   {
-    imgPath: "/images/logos/company-logo-1.png",
+    imgPath: "/images/logos/react.png",
     name: "logo1",
   },
   {
-    imgPath: "/images/logos/company-logo-2.png",
+    imgPath: "/images/logos/tailwind.png",
+    name: "logo11",
+  },
+  {
+    imgPath: "/images/logos/ts.png",
     name: "logo2",
   },
   {
-    imgPath: "/images/logos/company-logo-3.png",
+    imgPath: "/images/logos/js.png",
     name: "logo3",
   },
   {
-    imgPath: "/images/logos/company-logo-4.png",
-    name: "logo4",
-  },
-  {
-    imgPath: "/images/logos/company-logo-5.png",
+    imgPath: "/images/logos/node.png",
     name: "logo5",
   },
   {
-    imgPath: "/images/logos/company-logo-6.png",
+    imgPath: "/images/logos/graphql.png",
     name: "logo6",
   },
   {
-    imgPath: "/images/logos/company-logo-7.png",
+    imgPath: "/images/logos/postgres.svg",
     name: "logo7",
   },
   {
-    imgPath: "/images/logos/company-logo-8.png",
+    imgPath: "/images/logos/next.svg",
     name: "logo8",
   },
   {
-    imgPath: "/images/logos/company-logo-9.png",
-    name: "logo9",
-  },
-  {
-    imgPath: "/images/logos/company-logo-10.png",
+    imgPath: "/images/logos/git.png",
     name: "logo10",
   },
   {
-    imgPath: "/images/logos/company-logo-11.png",
-    name: "logo11",
+    imgPath: "/images/logos/azure.png",
+    name: "logo9",
+  },
+  {
+    imgPath: "/images/logos/company-logo-9.png",
+    name: "logo4",
   },
 ];
 
@@ -119,6 +119,23 @@ const dropIn = {
   },
 };
 
+const slideIn = {
+  hidden: { x: "100%", opacity: 0 },
+  visible: {
+    x: "0",
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut" as const,
+    },
+  },
+  exit: {
+    x: "-100%",
+    opacity: 0,
+    transition: { duration: 1, ease: "easeInOut" as const },
+  },
+};
+
 const zoomIn = {
   hidden: { scale: 0.2, opacity: 0 },
   visible: {
@@ -140,6 +157,12 @@ const zoomIn = {
 
 const project1 = {
   name: "SR Portal",
+  description:
+    "This project utilizes publicly available ArcGIS data from Santa Rosa, CA, with the primary objective of offering comprehensive insights into crime trends across the city.",
+  technologies: ["Next.js", "React", "Tailwind", "Typescript", "Graphql"],
+  projectLink: "https://sr-portal-gamma.vercel.app/",
+  repo: "https://github.com/cesperon4/sr_portal",
+  dataSource: "https://data-santarosa.opendata.arcgis.com/",
   images: [
     { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
     // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
@@ -151,6 +174,10 @@ const project1 = {
 
 const project2 = {
   name: "BAWSCA Portal",
+  description:
+    "This project was created for The Bay Area Water Supply & Conservation Agency (BAWSCA) which is a small agency representing 26 water agencies across the Bay Area that purchase wholesale water from San Francisco. To support its efforts, the Water Conservation Database serves as a centralized data management hub, storing key information such as projected water supplies, sector-based water consumption, population data, and conservation measures. Primarily used to collect data for BAWSCA’s annual report, the database also supports long-term water demand forecasting and other analytical efforts. While BAWSCA and its consultants regularly utilize the tool, individual agency staff typically log in once per year to submit required data.",
+  technologies: ["Next.js", "React", "Tailwind", "Graphql", "Apollo", "Prisma"],
+  projectLink: "https://bawscaportal.azurewebsites.net/",
   images: [
     { src: "/images/bawsca1.png", alt: "bawsca1", width: 500, height: 400 },
     { src: "/images/bawsca2.png", alt: "bawsca2", width: 500, height: 400 },
@@ -162,6 +189,10 @@ const project2 = {
 
 const project3 = {
   name: "ACWD Portal",
+  description:
+    "This project was developed for the Alameda County Water District (ACWD) to enable administrators to create fully customizable water savings forms for customers. Supported field types include multi-checkbox options, lookup fields, dropdowns, and more. Additionally, forms feature customizable statuses that can be updated by both customers and administrators to track progress efficiently.",
+  technologies: ["Next.js", "React", "Tailwind", "Graphql", "Apollo", "Prisma"],
+  projectLink: "https://acwdportal.azurewebsites.net/",
   images: [
     { src: "/images/acwd1.png", alt: "acwd1", width: 500, height: 400 },
     { src: "/images/acwd2.png", alt: "acwd2", width: 500, height: 400 },
@@ -174,56 +205,76 @@ const project3 = {
 const expCards = [
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
+      "Christian played a pivotal role in developing Pathloom's interactive mapping features, quickly mastering our Vue.js and Node.js codebase to significantly enhance the platform’s functionality and user experience.",
+    imgPath: "/images/pathloom2.png",
+    logoPath: "/images/pathloom3.png",
+    title: "Full Stack Software Engineer",
     date: "January 2023 - Present",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      `Developed an interactive map using spatial data (polygons, linestrings,
+        points) to enhance user experience`,
+      `Analyzed and manipulated large datasets (80,000+ rows) for accurate
+        data visualization.`,
+      `Integrated Mapbox API and tilesets to display overlays such as water
+        bodies and roads`,
+      `Built front-end components using Vue.js and Quasar, ensuring
+        seamless UI interactions`,
+      `Expanded and maintained Node.js API, implementing new features
+        and optimizations`,
+      `Managed a PostgreSQL database hosted on an AWS EC2 instance`,
     ],
   },
   {
     review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+      "Christian was instrumental in driving our engineering team’s adoption of modern web technologies, leveraging his expertise in React and Node.js to streamline development and elevate product quality.",
+    imgPath: "/images/wc5.png",
+    logoPath: "/images/wc3.png",
+    title: "Web Developer II",
+    date: "February 2022 - February 2025",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      `Led the development of multiple contracted data management
+        systems for clients in California, including BAWCA (Bay Area Water
+        Supply & Conservation Agency), ACWD (Alameda County Water
+        District), and EMWD (Eastern Municipal Water District). Designed
+        and implemented scalable solutions to streamline data processing,
+        improve operational efficiency and enhance reporting capabilities.`,
+      `Developed responsive user interfaces using modern frameworks
+        and tools, including React, Tailwind CSS, and Redux, ensuring
+        seamless user experiences and maintainable code.`,
+      `Developed secure and high-performance APIs using GraphQL,
+        Apollo Server, Express.js, Postgres, and Prisma ensuring robust
+        data handling and seamless client -server communication`,
+      `Utilized AWS DevOps and Git to deploy and maintain the codebase
+          through a robust CI/CD pipeline, ensuring seamless integration and
+          delivery.`,
     ],
   },
-  {
-    review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
-    responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
-    ],
-  },
+  // {
+  //   review:
+  //     "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+  //   imgPath: "/images/exp3.png",
+  //   logoPath: "/images/logo3.png",
+  //   title: "React Native Developer",
+  //   date: "March 2019 - May 2020",
+  //   responsibilities: [
+  //     "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
+  //     "Improved app performance and user experience through code optimization and testing.",
+  //     "Coordinated with the product team to implement features based on feedback.",
+  //   ],
+  // },
 ];
 
 const techStackIcons = [
   {
-    name: "React Developer",
+    name: "React",
     modelPath: "/models/react_logo-transformed.glb",
     scale: 1,
     rotation: [0, 0, 0] as [number, number, number],
   },
   {
-    name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
-    scale: 0.8,
+    name: "Typescript",
+    modelPath: "/models/ts.glb",
+    scale: 1.8,
     rotation: [0, 0, 0] as [number, number, number],
   },
   {
@@ -233,13 +284,13 @@ const techStackIcons = [
     rotation: [0, -Math.PI / 2, 0] as [number, number, number],
   },
   {
-    name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
+    name: "Tailwind",
+    modelPath: "/models/tailwind.glb",
+    scale: 2,
     rotation: [0, 0, 0] as [number, number, number],
   },
   {
-    name: "Project Manager",
+    name: "Git",
     modelPath: "/models/git-svg-transformed.glb",
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0] as [number, number, number],
@@ -269,6 +320,67 @@ const techStackImgs = [
   },
 ];
 
+const projectDetails = [
+  {
+    name: "SR Portal",
+    description:
+      "This project utilizes publicly available ArcGIS data from Santa Rosa, CA, with the primary objective of offering comprehensive insights into crime trends across the city.",
+    technologies: ["Next.js", "React", "Tailwind", "Typescript", "Graphql"],
+    projectLink: "https://sr-portal-gamma.vercel.app/",
+    repo: "https://github.com/cesperon4/sr_portal",
+    dataSource: "https://data-santarosa.opendata.arcgis.com/",
+    images: [
+      { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
+      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
+      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
+      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
+      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
+    ],
+  },
+  {
+    name: "Bawsca Portal",
+    description:
+      "This project was created for The Bay Area Water Supply & Conservation Agency (BAWSCA) which is a small agency representing 26 water agencies across the Bay Area that purchase wholesale water from San Francisco. To support its efforts, the Water Conservation Database serves as a centralized data management hub, storing key information such as projected water supplies, sector-based water consumption, population data, and conservation measures. Primarily used to collect data for BAWSCA’s annual report, the database also supports long-term water demand forecasting and other analytical efforts. While BAWSCA and its consultants regularly utilize the tool, individual agency staff typically log in once per year to submit required data.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Graphql",
+      "Apollo",
+      "Prisma",
+    ],
+    projectLink: "https://bawscaportal.azurewebsites.net/",
+    images: [
+      { src: "/images/bawsca1.png", alt: "bawsca1", width: 500, height: 400 },
+      { src: "/images/bawsca2.png", alt: "bawsca2", width: 500, height: 400 },
+      { src: "/images/bawsca3.png", alt: "bawsca3", width: 500, height: 400 },
+      { src: "/images/bawsca4.png", alt: "bawsca4", width: 500, height: 400 },
+      { src: "/images/bawsca5.png", alt: "bawsca5", width: 500, height: 400 },
+    ],
+  },
+  {
+    name: "Acwd Portal",
+    description:
+      "This project was developed for the Alameda County Water District (ACWD) to enable administrators to create fully customizable water savings forms for customers. Supported field types include multi-checkbox options, lookup fields, dropdowns, and more. Additionally, forms feature customizable statuses that can be updated by both customers and administrators to track progress efficiently.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Graphql",
+      "Apollo",
+      "Prisma",
+    ],
+    projectLink: "https://acwdportal.azurewebsites.net/",
+    images: [
+      { src: "/images/acwd1.png", alt: "acwd1", width: 500, height: 400 },
+      { src: "/images/acwd2.png", alt: "acwd2", width: 500, height: 400 },
+      { src: "/images/acwd3.png", alt: "acwd3", width: 500, height: 400 },
+      { src: "/images/acwd4.png", alt: "acwd4", width: 500, height: 400 },
+      { src: "/images/acwd5.png", alt: "acwd5", width: 500, height: 400 },
+    ],
+  },
+];
+
 export {
   words,
   counterItems,
@@ -277,10 +389,12 @@ export {
   techStackImgs,
   abilities,
   dropIn,
+  slideIn,
   project1,
   project2,
   project3,
   zoomIn,
   expCards,
   techStackIcons,
+  projectDetails,
 };
