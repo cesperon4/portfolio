@@ -1,4 +1,4 @@
-import { useRef, useState, ChangeEvent, FormEvent } from "react";
+import { useState } from "react";
 import Image from "next/image"; // import emailjs from "@emailjs/browser";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import TitleHeader from "../components/TitleHeader";
