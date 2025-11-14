@@ -1,3 +1,5 @@
+import { projectInterface } from "@/types/project.interface";
+
 const words = [
   { text: "Ideas", imgPath: "/images/ideas.svg" },
   { text: "Concepts", imgPath: "/images/concepts.svg" },
@@ -155,20 +157,161 @@ const zoomIn = {
   },
 };
 
+const projects: projectInterface[] = [
+  {
+    name: "SR Portal",
+    description:
+      "This project utilizes publicly available ArcGIS data from Santa Rosa, CA, with the primary objective of offering comprehensive insights into crime trends across the city.",
+    technologies: ["Next.js", "React", "Tailwind", "Typescript", "Graphql"],
+    projectLink: "https://sr-portal-gamma.vercel.app/",
+    repo: "https://github.com/cesperon4/sr_portal",
+    dataSource: "https://data-santarosa.opendata.arcgis.com/",
+    images: [
+      { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
+      {
+        src: "/images/srportal1.png",
+        alt: "srportal",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/srportal2.png",
+        alt: "srportal",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/srportal3.png",
+        alt: "srportal",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/srportal4.png",
+        alt: "srportal",
+        width: 500,
+        height: 400,
+      },
+    ],
+  },
+  {
+    name: "BAWSCA Portal",
+    description:
+      "This project was created for The Bay Area Water Supply & Conservation Agency (BAWSCA) which is a small agency representing 26 water agencies across the Bay Area that purchase wholesale water from San Francisco. To support its efforts, the Water Conservation Database serves as a centralized data management hub, storing key information such as projected water supplies, sector-based water consumption, population data, and conservation measures. Primarily used to collect data for BAWSCA’s annual report, the database also supports long-term water demand forecasting and other analytical efforts. While BAWSCA and its consultants regularly utilize the tool, individual agency staff typically log in once per year to submit required data.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Graphql",
+      "Apollo",
+      "Prisma",
+    ],
+    projectLink: "https://bawscaportal.azurewebsites.net/",
+    images: [
+      { src: "/images/bawsca1.png", alt: "bawsca1", width: 500, height: 400 },
+      { src: "/images/bawsca2.png", alt: "bawsca2", width: 500, height: 400 },
+      { src: "/images/bawsca3.png", alt: "bawsca3", width: 500, height: 400 },
+      { src: "/images/bawsca4.png", alt: "bawsca4", width: 500, height: 400 },
+      { src: "/images/bawsca5.png", alt: "bawsca5", width: 500, height: 400 },
+    ],
+  },
+  {
+    name: "ACWD Portal",
+    description:
+      "This project was developed for the Alameda County Water District (ACWD) to enable administrators to create fully customizable water savings forms for customers. Supported field types include multi-checkbox options, lookup fields, dropdowns, and more. Additionally, forms feature customizable statuses that can be updated by both customers and administrators to track progress efficiently.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Graphql",
+      "Apollo",
+      "Prisma",
+    ],
+    projectLink: "https://acwdportal.azurewebsites.net/",
+    images: [
+      { src: "/images/acwd1.png", alt: "acwd1", width: 500, height: 400 },
+      { src: "/images/acwd2.png", alt: "acwd2", width: 500, height: 400 },
+      { src: "/images/acwd3.png", alt: "acwd3", width: 500, height: 400 },
+      { src: "/images/acwd4.png", alt: "acwd4", width: 500, height: 400 },
+      { src: "/images/acwd5.png", alt: "acwd5", width: 500, height: 400 },
+    ],
+  },
+  {
+    name: "Apply IQ",
+    description:
+      "AI job application tool that leverages LLM chat completion through Hugging Faces inference providers for access. Generate concise and professional cover letters using well generated contextual prompts that leverage users inputed job resume, projects descriptions. Also provides responses to application questions using the same data inputs. Integrated with Notion SDK, Creates a database entry in Notion upon cover letter generation. That way end users can keep track of jobs applied.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Hugging Face",
+      "OLLAMA",
+      "Notion SDK",
+    ],
+    projectLink: "https://apply-iq.vercel.app/",
+    images: [
+      { src: "/images/acwd1.png", alt: "acwd1", width: 500, height: 400 },
+      { src: "/images/acwd2.png", alt: "acwd2", width: 500, height: 400 },
+      { src: "/images/acwd3.png", alt: "acwd3", width: 500, height: 400 },
+      { src: "/images/acwd4.png", alt: "acwd4", width: 500, height: 400 },
+      { src: "/images/acwd5.png", alt: "acwd5", width: 500, height: 400 },
+    ],
+  },
+];
+
 const project1 = {
   name: "SR Portal",
   description:
     "This project utilizes publicly available ArcGIS data from Santa Rosa, CA, with the primary objective of offering comprehensive insights into crime trends across the city.",
-  technologies: ["Next.js", "React", "Tailwind", "Typescript", "Graphql"],
+  technologies: [
+    "Next.js",
+    "React",
+    "Tailwind",
+    "Typescript",
+    "Graphql",
+    "Prisma",
+  ],
+  features: [
+    "Oath",
+    "Browser Cache",
+    "Api Cache",
+    "Token auth",
+    "Rate Limiting",
+  ],
   projectLink: "https://sr-portal-gamma.vercel.app/",
   repo: "https://github.com/cesperon4/sr_portal",
   dataSource: "https://data-santarosa.opendata.arcgis.com/",
   images: [
-    { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-    // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-    // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-    // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-    // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
+    {
+      src: "/images/srportal.png",
+      alt: "srportal",
+      width: 500,
+      height: 400,
+    },
+    {
+      src: "/images/srportal4.png",
+      alt: "srportal",
+      width: 500,
+      height: 400,
+    },
+    {
+      src: "/images/srportal1.png",
+      alt: "srportal",
+      width: 500,
+      height: 400,
+    },
+    {
+      src: "/images/srportal2.png",
+      alt: "srportal",
+      width: 500,
+      height: 400,
+    },
+    {
+      src: "/images/srportal3.png",
+      alt: "srportal",
+      width: 500,
+      height: 400,
+    },
   ],
 };
 
@@ -188,6 +331,21 @@ const project2 = {
 };
 
 const project3 = {
+  name: "ACWD Portal",
+  description:
+    "This project was developed for the Alameda County Water District (ACWD) to enable administrators to create fully customizable water savings forms for customers. Supported field types include multi-checkbox options, lookup fields, dropdowns, and more. Additionally, forms feature customizable statuses that can be updated by both customers and administrators to track progress efficiently.",
+  technologies: ["Next.js", "React", "Tailwind", "Graphql", "Apollo", "Prisma"],
+  projectLink: "https://acwdportal.azurewebsites.net/",
+  images: [
+    { src: "/images/acwd1.png", alt: "acwd1", width: 500, height: 400 },
+    { src: "/images/acwd2.png", alt: "acwd2", width: 500, height: 400 },
+    { src: "/images/acwd3.png", alt: "acwd3", width: 500, height: 400 },
+    { src: "/images/acwd4.png", alt: "acwd4", width: 500, height: 400 },
+    { src: "/images/acwd5.png", alt: "acwd5", width: 500, height: 400 },
+  ],
+};
+
+const project4 = {
   name: "ACWD Portal",
   description:
     "This project was developed for the Alameda County Water District (ACWD) to enable administrators to create fully customizable water savings forms for customers. Supported field types include multi-checkbox options, lookup fields, dropdowns, and more. Additionally, forms feature customizable statuses that can be updated by both customers and administrators to track progress efficiently.",
@@ -331,10 +489,6 @@ const projectDetails = [
     dataSource: "https://data-santarosa.opendata.arcgis.com/",
     images: [
       { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
-      // { src: "/images/srportal.png", alt: "srportal", width: 500, height: 400 },
     ],
   },
   {
@@ -393,6 +547,8 @@ export {
   project1,
   project2,
   project3,
+  project4,
+  projects,
   zoomIn,
   expCards,
   techStackIcons,

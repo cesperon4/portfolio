@@ -9,6 +9,9 @@ export interface projectInterface {
   name: string;
   description: string;
   technologies: string[];
-  images: projectImage[];
   projectLink: string;
+  repo?: string;
+  dataSource?: string;
+  images: projectImage[];
+  features?: string[];
 }

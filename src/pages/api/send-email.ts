@@ -5,7 +5,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("email handler");
   if (req.method === "POST") {
     const { name, email, message } = req.body;
 
@@ -18,8 +17,6 @@ export default async function handler(
       },
     });
 
-    console.log("transporter: ", process.env.EMAIL_USER);
-
     // Set up email data
     const mailOptions = {
       from: email,
@@ -29,13 +26,12 @@ export default async function handler(
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`,
     };
 
-    console.log("mail options: ", mailOptions);
-
     try {
       // Send the email
       await transporter.sendMail(mailOptions);
       res.status(200).json({ message: "Email sent successfully" });
     } catch (error) {
+      console.log("error: ", error);
       res.status(500).json({ message: "Error sending email", error });
     }
   } else {

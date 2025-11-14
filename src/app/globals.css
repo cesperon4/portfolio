@@ -187,7 +187,6 @@ section {
         }
       }
     }
-
     .project-list-wrapper {
       @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
 
