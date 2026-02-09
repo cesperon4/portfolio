@@ -1,6 +1,12 @@
 import { useState } from "react";
-import Image from "next/image"; // import emailjs from "@emailjs/browser";
-import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import Image from "next/image";
+import {
+  FaCheckCircle,
+  FaTimesCircle,
+  FaUser,
+  FaEnvelope,
+  FaComment,
+} from "react-icons/fa";
 import TitleHeader from "../components/TitleHeader";
 import ContactExperience from "../components/models/contact/ContactExperience";
 
@@ -63,7 +69,7 @@ const Contact = () => {
   const [status, setStatus] = useState("");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -110,69 +116,85 @@ const Contact = () => {
           title="Get in Touch – Let’s Connect"
           sub="💬 Have questions or ideas? Let’s talk! 🚀"
         />
-        <div className="grid-12-cols mt-16">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-10 mt-16 items-stretch rounded-2xl border border-white/[0.07] p-6 md:p-8 xl:p-10 contact-section-blend">
           <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
+            <div className="flex-center card-border rounded-xl p-8 md:p-10">
               <form
-                // ref={formRef}
                 onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-7"
+                className="contact-form w-full flex flex-col gap-6"
               >
-                {
-                  <p className="mt-4 text-center">
-                    {status === "Email sent successfully." ? (
-                      <span className="flex items-center justify-center text-green-500">
-                        <FaCheckCircle className="mr-2" /> {status}
-                      </span>
-                    ) : status === "Failed to send email." ? (
-                      <span className="flex items-center justify-center text-red-500">
-                        <FaTimesCircle className="mr-2" /> {status}
-                      </span>
-                    ) : (
-                      status
+                {status ? (
+                  <div
+                    className={`contact-form-status flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm ${
+                      status === "Email sent successfully."
+                        ? "bg-green-500/10 text-green-400 border border-green-500/20"
+                        : status === "Failed to send email."
+                        ? "bg-red-500/10 text-red-400 border border-red-500/20"
+                        : "bg-white/5 text-white-50 border border-white/10"
+                    }`}
+                  >
+                    {status === "Email sent successfully." && (
+                      <FaCheckCircle className="size-4 shrink-0" />
                     )}
-                  </p>
-                }
-                <div>
+                    {status === "Failed to send email." && (
+                      <FaTimesCircle className="size-4 shrink-0" />
+                    )}
+                    <span>{status}</span>
+                  </div>
+                ) : null}
+
+                <div className="contact-form-field">
                   <label htmlFor="name">Your name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="What’s your good name?"
-                    required
-                  />
+                  <div className="contact-form-input-wrap">
+                    <FaUser className="contact-form-icon" aria-hidden />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="What’s your good name?"
+                      required
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="email">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="What’s your email address?"
-                    required
-                  />
+                <div className="contact-form-field">
+                  <label htmlFor="email">Your email</label>
+                  <div className="contact-form-input-wrap">
+                    <FaEnvelope className="contact-form-icon" aria-hidden />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="message">Your Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="How can I help you?"
-                    rows={5} // ✅ rows should be a number
-                    required
-                  />
+                <div className="contact-form-field">
+                  <label htmlFor="message">Your message</label>
+                  <div className="contact-form-input-wrap contact-form-input-wrap--textarea">
+                    <FaComment
+                      className="contact-form-icon contact-form-icon--textarea"
+                      aria-hidden
+                    />
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="How can I help you?"
+                      rows={4}
+                      required
+                    />
+                  </div>
                 </div>
 
-                <button type="submit">
+                <button type="submit" className="contact-form-submit">
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
@@ -181,7 +203,7 @@ const Contact = () => {
                     <div className="arrow-wrapper">
                       <Image
                         src="/images/arrow-down.svg"
-                        alt="arrow"
+                        alt=""
                         width={400}
                         height={400}
                       />
@@ -191,8 +213,8 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
+          <div className="xl:col-span-7 flex min-h-[280px] xl:min-h-0">
+            <div className="bg-[#8b8680] w-full h-full min-h-[280px] xl:min-h-0 hover:cursor-grab rounded-3xl overflow-hidden">
               <ContactExperience />
             </div>
           </div>

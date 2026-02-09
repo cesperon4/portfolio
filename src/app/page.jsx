@@ -11,6 +11,7 @@ import FeatureCards from "@/sections/FeatureCards";
 import ExperienceSection from "@/sections/ExperienceSection";
 import Testimonials from "@/sections/Testimonials";
 import TechStack from "@/sections/TechStack";
+import GitHubSection from "@/sections/GitHubSection";
 import Contact from "@/sections/Contact";
 
 const RotatingCube = () => {
@@ -41,6 +42,7 @@ export default function Home() {
       <LogoSection />
       <FeatureCards />
       <ExperienceSection />
+      <GitHubSection />
       <TechStack />
       <Contact />
       {/* <Testimonials /> */}

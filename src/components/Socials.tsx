@@ -1,39 +1,43 @@
 import React from "react";
-import { FaDownload } from "react-icons/fa";
-import Image from "next/image";
+import { FaLinkedinIn, FaGithub, FaFileDownload } from "react-icons/fa";
+
+const links = [
+  {
+    href: "https://www.linkedin.com/in/christian-esperon",
+    label: "LinkedIn",
+    icon: FaLinkedinIn,
+    external: true,
+  },
+  {
+    href: "https://github.com/cesperon4",
+    label: "GitHub",
+    icon: FaGithub,
+    external: true,
+  },
+  {
+    href: "/resume.pdf",
+    label: "Resume",
+    icon: FaFileDownload,
+    download: "Christian_Esperon_Resume.pdf",
+  },
+];
 
 const Socials = () => {
   return (
-    <div className="social-links md:flex items-center gap-4 mr-auto ml-5 hidden">
-      <a href="https://www.linkedin.com/in/christian-esperon" className="link">
-        <Image
-          className="rounded-lg"
-          src={"/images/linkedin.png"}
-          alt={"GitHub"}
-          width={20}
-          height={20}
-        />
-        Linkedin
-        <span className="underline" />
-      </a>
-      <span>|</span>
-      <a href="https://github.com/cesperon4" className="link">
-        <Image
-          className="rounded-lg"
-          src={"/images/github.png"}
-          alt={"GitHub"}
-          width={20}
-          height={20}
-        />
-        Github
-      </a>
-      <span>|</span>
-      <a href="/resume.pdf" download="My_Resume.pdf">
-        <button className="bg-primaryColor flex gap-1 items-center text-white cursor-pointer">
-          <FaDownload />
-          Resume
-        </button>
-      </a>
+    <div className="social-links flex items-center gap-3 md:gap-4">
+      {links.map(({ href, label, icon: Icon, external, download }) => (
+        <a
+          key={label}
+          href={href}
+          className="social-link group flex items-center gap-2 rounded-lg px-3 py-2 text-white-50 transition-colors hover:bg-white/5 hover:text-white"
+          aria-label={label}
+          {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+          {...(download && { download })}
+        >
+          <Icon className="size-4 shrink-0 transition-transform group-hover:scale-110" aria-hidden />
+          <span className="text-sm font-medium">{label}</span>
+        </a>
+      ))}
     </div>
   );
 };
