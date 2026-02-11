@@ -196,6 +196,18 @@ const projects: projectInterface[] = [
         width: 500,
         height: 400,
       },
+      {
+        src: "/images/srportal5.png",
+        alt: "srportal",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/srportal6.png",
+        alt: "srportal",
+        width: 500,
+        height: 400,
+      },
     ],
   },
   {
@@ -254,11 +266,7 @@ const projects: projectInterface[] = [
     ],
     projectLink: "https://apply-iq.vercel.app/",
     images: [
-      { src: "/images/acwd1.png", alt: "acwd1", width: 500, height: 400 },
-      { src: "/images/acwd2.png", alt: "acwd2", width: 500, height: 400 },
-      { src: "/images/acwd3.png", alt: "acwd3", width: 500, height: 400 },
-      { src: "/images/acwd4.png", alt: "acwd4", width: 500, height: 400 },
-      { src: "/images/acwd5.png", alt: "acwd5", width: 500, height: 400 },
+      { src: "/images/apply.png", alt: "acwd1", width: 500, height: 400 },
     ],
   },
 ];
@@ -312,6 +320,12 @@ const project1 = {
     },
     {
       src: "/images/srportal3.png",
+      alt: "srportal",
+      width: 500,
+      height: 400,
+    },
+    {
+      src: "/images/srportal5.png",
       alt: "srportal",
       width: 500,
       height: 400,

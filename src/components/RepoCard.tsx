@@ -1,20 +1,41 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaExternalLinkAlt, FaStar, FaCodeBranch, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import {
+  FaExternalLinkAlt,
+  FaStar,
+  FaCodeBranch,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 import type { Repo } from "@/types/github";
 import BranchList from "./BranchList";
 
 /* GitHub-style language colors (bg + border accent) */
 const LANGUAGE_COLORS: Record<string, { pill: string; accent: string }> = {
-  TypeScript: { pill: "bg-[#3178c6]/25 text-[#7eb8f7] border-[#3178c6]/40", accent: "#3178c6" },
-  JavaScript: { pill: "bg-[#f7df1e]/20 text-[#f0d84a] border-[#f7df1e]/50", accent: "#f7df1e" },
-  Python: { pill: "bg-[#3572A5]/25 text-[#7eb8e8] border-[#3572A5]/40", accent: "#3572A5" },
-  React: { pill: "bg-[#61dafb]/20 text-[#8ee9fc] border-[#61dafb]/40", accent: "#61dafb" },
+  TypeScript: {
+    pill: "bg-[#3178c6]/25 text-[#7eb8f7] border-[#3178c6]/40",
+    accent: "#3178c6",
+  },
+  JavaScript: {
+    pill: "bg-[#f7df1e]/20 text-[#f0d84a] border-[#f7df1e]/50",
+    accent: "#f7df1e",
+  },
+  Python: {
+    pill: "bg-[#3572A5]/25 text-[#7eb8e8] border-[#3572A5]/40",
+    accent: "#3572A5",
+  },
+  React: {
+    pill: "bg-[#61dafb]/20 text-[#8ee9fc] border-[#61dafb]/40",
+    accent: "#61dafb",
+  },
 };
 
 const getLanguageStyle = (language: string) =>
-  LANGUAGE_COLORS[language] ?? { pill: "bg-white/10 text-white-50 border-white/20", accent: "#839cb5" };
+  LANGUAGE_COLORS[language] ?? {
+    pill: "bg-white/10 text-white-50 border-white/20",
+    accent: "#839cb5",
+  };
 
 interface RepoCardProps {
   repo: Repo;
@@ -39,7 +60,9 @@ const RepoCard = ({ repo }: RepoCardProps) => {
             rel="noopener noreferrer"
             className="font-semibold text-white hover:opacity-90 transition-opacity flex items-center gap-2 min-w-0 group/link"
           >
-            <span className="truncate group-hover/link:underline">{repo.name}</span>
+            <span className="truncate group-hover/link:underline">
+              {repo.name}
+            </span>
             <FaExternalLinkAlt className="size-3.5 shrink-0 text-white-50 group-hover/link:text-white" />
           </a>
           <div className="flex items-center gap-2 shrink-0">
@@ -61,8 +84,13 @@ const RepoCard = ({ repo }: RepoCardProps) => {
         )}
 
         <div className="flex flex-wrap items-center gap-2 mt-auto">
-          <span className={`language-pill rounded-full border px-2.5 py-1 text-xs font-medium ${languagePillClass}`}>
-            <span className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle" style={{ backgroundColor: accent }} />
+          <span
+            className={`language-pill rounded-full border px-2.5 py-1 text-xs font-medium ${languagePillClass}`}
+          >
+            <span
+              className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle"
+              style={{ backgroundColor: accent }}
+            />
             {repo.language}
           </span>
           <span className="text-white-50/60 text-xs">
