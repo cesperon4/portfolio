@@ -11,6 +11,7 @@ import {
   mockActivityGrid,
   mockGitHubStats,
 } from "@/constants/githubMock";
+import { useQuery } from "@tanstack/react-query";
 
 type Tab = "overview" | "repos";
 
@@ -23,6 +24,14 @@ const GitHubSection = () => {
     const q = searchQuery.trim().toLowerCase();
     return mockRepos.filter((repo) => repo.name.toLowerCase().includes(q));
   }, [searchQuery]);
+
+  const { data } = useQuery({
+    queryKey: ["github-repos"],
+    queryFn: () =>
+      fetch("/api/github/user/cesperon4/repos").then((res) => res.json()),
+  });
+
+  console.log("github repos: ", data);
 
   return (
     <section id="github" className="flex-center section-padding">

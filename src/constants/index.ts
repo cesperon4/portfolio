@@ -266,7 +266,115 @@ const projects: projectInterface[] = [
     ],
     projectLink: "https://apply-iq.vercel.app/",
     images: [
-      { src: "/images/apply.png", alt: "acwd1", width: 500, height: 400 },
+      { src: "/images/apply.png", alt: "apply", width: 500, height: 400 },
+    ],
+  },
+  {
+    name: "TicketAI",
+    description:
+      "An AI-assisted ticketing product that streamlines support workflows—from ticket intake and triage through resolution—with intelligent assistance and a clear interface for agents and requesters.",
+    technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
+    projectLink: "",
+    images: [
+      {
+        src: "/images/ticketai1.png",
+        alt: "TicketAI",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/ticketai2.png",
+        alt: "TicketAI",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/ticketai3.png",
+        alt: "TicketAI",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/ticketai4.png",
+        alt: "TicketAI",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/ticketai5.png",
+        alt: "TicketAI",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/ticketai6.png",
+        alt: "TicketAI",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/ticketai7.png",
+        alt: "TicketAI",
+        width: 500,
+        height: 400,
+      },
+    ],
+  },
+  {
+    name: "GreenGrid",
+    description:
+      "A sustainability-focused platform experience for monitoring and presenting environmental project data with a clean, dashboard-style interface.",
+    technologies: ["Next.js", "React", "Tailwind", "TypeScript"],
+    projectLink: "",
+    images: [
+      {
+        src: "/images/greengrid1.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/greengrid2.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/greengrid3.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/greengrid4.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/greengrid5.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/greengrid6.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/greengrid7.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
+      {
+        src: "/images/greengrid8.png",
+        alt: "GreenGrid",
+        width: 500,
+        height: 400,
+      },
     ],
   },
 ];
